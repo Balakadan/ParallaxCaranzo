@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+/* Add custom CSS styles for the image hover effect */
+.hover-img {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-img img {
+    width: 450px; /* Adjust the width as needed */
+    height: auto;
+    border-radius: 10px; /* Add border radius for a rounded look */
+}
+
+/* Additional CSS for the resized images */
+.hover-img img {
+    max-width: 400px; /* Adjust the maximum width as needed */
+    height: auto;
+    border-radius: 10px; /* Add border radius for a rounded look */
+}
+
+.about-me-content {
+    text-align: justify;
+}
+
+/* CSS Animation for About Me section */
+.about-me-content.bounceInUp {
+    animation: bounceInUp 1s ease both;
+}
+
+/* CSS Animation for Capstone Project section */
+.capstone-content.slideInRight {
+    animation: slideInRight 1s ease both;
+}
+
+/* CSS for individual images in the gallery */
+.image-gallery img {
+    max-width: 200px; /* Adjust the maximum width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add border radius for a rounded look */
+    opacity: 0; /* Initially hide the images */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+}
+
+/* Keyframes for fading in the images */
+@keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="pimg1">
+<div class="ptext">
+<span class="border">
+    Welcome Pirates!
+</span>
+</div>
+
+<audio id="bg-music" loop>
+  <source src="img/hard.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<button id="music-btn">Play Music 2</button>
+
+</div>
+
+<section class="section section-light">
+    <div class="about-me-container">
+        <div class="profile-pic">
+            <img src="img/me2.jpg" alt="Your Name">
+        </div>
+        <div class="about-me-content">
+            <h2>ABOUT ME!</h2>
+            <p>
+                Hi I am Joseph Christian A. Caranzo a third year college student from Cavite State University-Naic taking up Bachelor of Science in Information Technology. I lived in Bagong Kalsada, Naic, Cavite. I choose this course because this will be a stepping stone towards my dream.
+                I like watching Anime and read manga whenever I have a free time. I like being an IT student because I can challenge myself to learn new things and explore.
+                I want to learn more of this subject because it really brings challenge to me.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="pimg2">
+<div class="ptext">
+<span class="border trans">
+    Educational Background
+</span>
+</div>
+</div>
+<section class="section section-dark">
+  <div class="hover-img senior-img">
+    <h2>Senior High School - Naic National HS Satellite</h2>
+    <img src="img/senior.jpg" alt="Senior High School Image">
+</div>
+
+<div class="hover-img junior-img">
+    <h2>Junior High School - Naic Coastal National HS</h2>
+    <img src="img/hs.jpg" alt="Junior High School Image">
+</div>
+
+</section>
+
+<div class="pimg3">
+<div class="ptext">
+<span class="border trans">
+    Capstone Project
+</span>
+</div>
+</div>
+<section class="section section-dark">
+<div class="capstone-content slideInRight">
+    <h2>Agrino : Plant disease detection using Image Processing</h2>
+    <p>
+        This is the sample design of our Capstone Project.
+    </p>
+</div>
+
+<div class="image-gallery">
+    <img src="img/ag.jpg" alt="Image 1">
+    <img src="img/ri.jpg" alt="Image 2">
+    <img src="img/no.jpg" alt="Image 3">
+    <img src="img/ba.jpg" alt="Image 4">
+</div>
+</section>
+
+<div class="pimg4">
+<div class="ptext">
+<span class="border trans">
+    Video Presentation
+</span>
+</div>
+</div>
+<section class="section section-dark">
+<h2>Watch Funny Videos Memes!</h2>
+<div class="videos-container">
+    <video width="640" height="360" controls>
+      <source src="img/kakaiba.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video width="640" height="360" controls>
+      <source src="img/kakaiba2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+</div>
+</section>
+
+<div class="pimg1">
+<div class="ptext">
+<span class="border">
+    Welcome to my Website!
+</span>
+</div>
+</div>
+
+<audio id="bg-music2" loop>
+  <source src="img/soft.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<button id="music-btn2">Play Music 1</button>
+
+<script>
+var music = document.getElementById("bg-music");
+var musicBtn = document.getElementById("music-btn");
+var videos = document.querySelectorAll("video");
+
+var music2 = document.getElementById("bg-music2");
+var musicBtn2 = document.getElementById("music-btn2");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+    musicBtn.textContent = "Pause Music";
+  } else {
+    music.pause();
+    musicBtn.textContent = "Play Music";
+  }
+}
+
+function toggleMusic2() {
+  if (music2.paused) {
+    music2.play();
+    musicBtn2.textContent = "Pause Music 2";
+  } else {
+    music2.pause();
+    musicBtn2.textContent = "Play Music 2";
+  }
+}
+
+musicBtn.addEventListener("click", toggleMusic);
+musicBtn2.addEventListener("click", toggleMusic2);
+
+videos.forEach(function(video) {
+  video.addEventListener("play", function() {
+    if (!music.paused) {
+      music.pause();
+      musicBtn.textContent = "Play Music";
+    }
+    if (!music2.paused) {
+      music2.pause();
+      musicBtn2.textContent = "Play Music 2";
+    }
+    videos.forEach(function(otherVideo) {
+      if (otherVideo !== video) {
+        otherVideo.pause();
+      }
+    });
+  });
+
+  video.addEventListener("ended", function() {
+    if (music.paused) {
+      music.play();
+      musicBtn.textContent = "Pause Music";
+    }
+    if (music2.paused) {
+      music2.play();
+      musicBtn2.textContent = "Pause Music 2";
+    }
+  });
+});
+
+function animateAboutMe() {
+    const aboutMeSection = document.querySelector('.about-me-container');
+    const aboutMeContent = document.querySelector('.about-me-content');
+
+    const rect = aboutMeSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    if (rect.top < windowHeight && rect.bottom >= 0) {
+        aboutMeContent.classList.add('bounceInUp');
+    } else {
+        aboutMeContent.classList.remove('bounceInUp');
+    }
+}
+
+function animateCapstoneProject() {
+    const capstoneSection = document.querySelector('.capstone-content');
+
+    const rect = capstoneSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    if (rect.top < windowHeight && rect.bottom >= 0) {
+        capstoneSection.classList.add('slideInRight');
+    } else {
+        capstoneSection.classList.remove('slideInRight');
+    }
+}
+
+function revealImagesOnScroll() {
+    const images = document.querySelectorAll('.image-gallery img');
+
+    images.forEach(function(image, index) {
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    setTimeout(function() {
+                        image.style.opacity = 1;
+                    }, index * 500); // Adjust the delay between each image reveal
+                    observer.unobserve(image);
+                }
+            });
+        });
+
+        observer.observe(image);
+    });
+}
+
+// Initial call to reveal images when the page loads
+revealImagesOnScroll();
+
+window.addEventListener('scroll', function() {
+    // Reset the opacity of images to 0 on scroll
+    const images = document.querySelectorAll('.image-gallery img');
+    images.forEach(function(image) {
+        image.style.opacity = 0;
+    });
+
+    // Call the function to reveal images again
+    revealImagesOnScroll();
+});
+
+window.addEventListener('scroll', animateAboutMe);
+window.addEventListener('scroll', animateCapstoneProject);
+
+</script>
+
+</body>
+</html>

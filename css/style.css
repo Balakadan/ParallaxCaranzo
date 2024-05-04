@@ -1,0 +1,253 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #000;
+}
+
+.pimg1, .pimg2, .pimg3, .pimg4 {
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*
+    fixed = parallax
+    scroll = normal
+    */
+    background-attachment: fixed;
+}
+
+.pimg1 {
+    background-image: url('../img/one.gif');
+    min-height: 100%;
+}
+
+.pimg2 {
+    background-image: url('../img/piece.jpg');
+    min-height: 400px;
+}
+
+.pimg3 {
+    background-image: url('../img/saga.jpg');
+    min-height: 400px;
+}
+
+.pimg4 {
+    background-image: url('../img/image4.jpg');
+    min-height: 400px;
+}
+
+.section {
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light {
+    background-color: #f4f4f4;
+    color: #666;
+}
+
+.section-dark {
+    background-color: #282e34;
+    color: #ddd;
+}
+
+.ptext {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.ptext .border {
+    background-color: #111;
+    color: #fff;
+    padding: 5px;
+}
+
+.ptext .border .trans {
+    background-color: transparent;
+}
+
+/* Styling for the circular photo */
+.profile-pic {
+    float: left; /* Float the profile picture to the left */
+    margin-right: 25px; /* Add some space between the picture and the text */
+}
+
+.profile-pic img {
+    border-radius: 50%; /* Makes the image circular */
+    width: 200px; /* Adjust the size as needed */
+    height: 200px;
+}
+
+.about-me-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+}
+
+.about-me-content {
+    flex-grow: 1; /* Allow the content to grow to fill available space */
+}
+
+/* Additional CSS for the video element */
+.videos-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.videos-container video {
+    width: 45%; /* Adjust width as needed */
+    border: 1px solid #ccc; /* Optional: Add border for styling */
+    border-radius: 8px; /* Optional: Add border radius for styling */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for styling */
+}
+
+/* CSS for the Play Music buttons */
+#music-btn, #music-btn2 {
+    position: absolute;
+    top: 20px; /* Adjust this value to move the button up or down */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 1; /* Ensure button appears above the background image */
+}
+
+#music-btn {
+    right: 15px; /* Adjust the distance from the right edge */
+}
+
+#music-btn2 {
+    right: 175px; /* Adjust the distance from the right edge */
+}
+
+#music-btn:hover, #music-btn2:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+/* Add hover effect styles for clickable sections */
+.hover-img {
+    position: relative;
+    display: inline-block;
+}
+
+/* Position and style the text within the hover-img container */
+.hover-img .hover-img-text {
+    position: absolute;
+    top: 50%;
+    right: 10%; /* Adjust the right distance as needed */
+    transform: translateY(-50%);
+    width: 40%; /* Adjust the width as needed */
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: left; /* Align text to the left */
+}
+
+/* Styling for the Senior High School image */
+.senior-img .hover-img-text {
+    right: 80px; /* Adjust the right distance as needed */
+}
+
+/* Styling for the Junior High School image */
+.junior-img .hover-img-text {
+    right: 10%; /* Adjust the right distance as needed */
+}
+
+/* Keyframes for bouncing animation */
+@keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to the About Me content */
+.about-me-content.bounceInUp {
+    animation: bounceInUp 2s ease forwards;
+}
+
+/* Keyframes for moving the Senior High School text */
+@keyframes moveSeniorText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); } /* Adjust the distance as needed */
+}
+
+/* Keyframes for moving the Junior High School text */
+@keyframes moveJuniorText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-20px); } /* Adjust the distance as needed */
+}
+
+.senior-img h2 {
+    animation: moveSeniorText 1s infinite alternate; /* Apply animation to senior high school h2 */
+}
+
+.junior-img h2 {
+    animation: moveJuniorText 1s infinite alternate; /* Apply animation to junior high school h2 */
+}
+
+/* Keyframes for moving the Senior High School image */
+@keyframes moveSenior {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); } /* Adjust the distance as needed */
+}
+
+/* Keyframes for moving the Junior High School image */
+@keyframes moveJunior {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-20px); } /* Adjust the distance as needed */
+}
+
+/* Styling for the Senior High School image */
+.senior-img {
+    animation: moveSenior 5s infinite alternate; /* Apply animation to senior-img class */
+}
+
+/* Styling for the Junior High School image */
+.junior-img {
+    animation: moveJunior 5s infinite alternate; /* Apply animation to junior-img class */
+}
+
+/* Add custom CSS styles for the image hover effect */
+.hover-img img {
+    max-width: 150px; /* Reduce the maximum width of the images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add border radius for a rounded look */
+}
+
+/* CSS for the image gallery */
+.image-gallery {
+    display: flex; /* Use flexbox to arrange images in a row */
+    justify-content: space-around; /* Evenly distribute space between images */
+    flex-wrap: wrap; /* Allow images to wrap to the next line if needed */
+    margin-top: 20px; /* Add margin as needed */
+}
+
+/* CSS for individual images in the gallery */
+.image-gallery img {
+    margin: 10px; /* Add some margin around each image */
+}
